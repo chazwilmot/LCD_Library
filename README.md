@@ -19,3 +19,23 @@ Steps:
 7. Initialize I2C
 8. Now if you have the hardware and software done
     A. Use printf("") to put messages on the screen
+
+
+
+
+
+/*
+ ----------------------------------------------------------------------------
+ * "THE BEER-WARE LICENSE" (Revision 43):
+ * <chazwilmot@gmail.com> & <tristjpawlenty@gmail.com> wrote and adapted this file.  
+ * As long as you retain this notice you can do whatever you want with this stuff. 
+ * If we meet some day, and you think this stuff is worth it, you can buy me a beer.
+ *                                          Charles Wilmot and Tristan Pawlenty
+ * ----------------------------------------------------------------------------
+ * ----------------------------------------------------------------------------
+ * "THE BEER-WARE LICENSE" (Revision 42):
+ * <joerg@FreeBSD.ORG> wrote this file.  As long as you retain this notice you
+ * can do whatever you want with this stuff. If we meet some day, and you think
+ * this stuff is worth it, you can buy me a beer in return.        Joerg Wunsch
+ * ----------------------------------------------------------------------------
+ */
