@@ -1,4 +1,11 @@
 /*
+ ----------------------------------------------------------------------------
+ * "THE BEER-WARE LICENSE" (Revision 43):
+ * <chazwilmot@gmail.com> & <tristjpawlenty@gmail.com> wrote and adapted this file.  
+ * As long as you retain this notice you can do whatever you want with this stuff. 
+ * If we meet some day, and you think this stuff is worth it, you can buy me a beer.
+ *                                          Charles Wilmot and Tristan Pawlenty
+ * ----------------------------------------------------------------------------
  * ----------------------------------------------------------------------------
  * "THE BEER-WARE LICENSE" (Revision 42):
  * <joerg@FreeBSD.ORG> wrote this file.  As long as you retain this notice you
@@ -61,9 +68,9 @@ lcd_init(void)
 int
 lcd_putchar(char c, FILE *unused)
 {
-  static bool nl_seen;
+  static bool nl_seen = 0;
 
-  if (nl_seen && c != '\n')
+  if (nl_seen >= 2 && c != '\n')
     {
       /*
        * First character after newline, clear display and home cursor.
@@ -75,11 +82,15 @@ lcd_putchar(char c, FILE *unused)
       hd44780_wait_ready(true);
       hd44780_outcmd(HD44780_DDADDR(0));
 
-      nl_seen = false;
+      nl_seen = 0;
     }
   if (c == '\n')
     {
-      nl_seen = true;
+      ++n1_seen;
+      if (nl_seen == 1){
+		    hd44780_wait_ready(true);
+		    hd44780_outcmd(HD44780_DDADDR(0x40));
+		  }
     }
   else
     {
@@ -88,4 +99,30 @@ lcd_putchar(char c, FILE *unused)
     }
 
   return 0;
+}
+
+/*
+Returns the cursor to the first row first cell of the LCD
+*/
+void home(void){
+  hd44780_wait_ready(true);
+	hd44780_outcmd(HD44780_DDADDR(0x00));
+}
+
+/*
+Clears the screen of the LCD and returns home
+*/
+void clear(void){
+	hd44780_wait_ready(false);
+	hd44780_outcmd(HD44780_CLR);
+	hd44780_wait_ready(true);
+	hd44780_outcmd(HD44780_DDADDR(0));
+}
+
+/*
+Puts the cursor at the start of the second row
+*/
+void row2(void){
+	hd44780_wait_ready(true);
+	hd44780_outcmd(HD44780_DDADDR(0x40));
 }
