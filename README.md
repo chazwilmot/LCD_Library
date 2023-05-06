@@ -8,10 +8,10 @@ Steps:
 1. Add all these files to your project
 2. Make edits in define.h
     A. Change to your hardware ports
-3. #include
-    A. #include "lcd.c"
-    B. #include "defines.h"
-    C. #include "lcd.h"
+3. include
+    A. include "lcd.c"
+    B. include "defines.h"
+    C. include "lcd.h"
 4. Define 
     A. FILE lcd_str = FDEV_SETUP_STREAM(lcd_putchar, NULL, _FDEV_SETUP_WRITE);\
 5. stdout = &lcd_str
