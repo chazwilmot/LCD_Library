@@ -86,7 +86,7 @@ lcd_putchar(char c, FILE *unused)
     }
   if (c == '\n')
     {
-      ++n1_seen;
+      ++nl_seen;
       if (nl_seen == 1){
 		    hd44780_wait_ready(true);
 		    hd44780_outcmd(HD44780_DDADDR(0x40));
