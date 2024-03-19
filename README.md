@@ -21,8 +21,7 @@ Steps:
     A. FILE lcd_str = FDEV_SETUP_STREAM(lcd_putchar, NULL, _FDEV_SETUP_WRITE);\
 8. stdout = &lcd_str
 9. lcd_init();
-10. Now if you have the hardware and software done
-    A. Use printf("") to put messages on the screen
+10. Use printf("") to put messages on the screen
 
 
 
