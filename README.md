@@ -7,16 +7,21 @@ We used Joerg Wunsch's library for the HD44780 LCD and make changes and added fu
 Steps:
 1. Add all these files to your project
 2. Make edits in define.h
+   
     A. Change to your hardware ports
 4. include
+   
     A. include "lcd.c"
+   
     B. include "defines.h"
+   
     C. include "lcd.h"
-5. Define 
+6. Define
+   
     A. FILE lcd_str = FDEV_SETUP_STREAM(lcd_putchar, NULL, _FDEV_SETUP_WRITE);\
-6. stdout = &lcd_str
-7. lcd_init();
-8. Now if you have the hardware and software done
+8. stdout = &lcd_str
+9. lcd_init();
+10. Now if you have the hardware and software done
     A. Use printf("") to put messages on the screen
 
 
