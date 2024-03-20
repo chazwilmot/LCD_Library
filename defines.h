@@ -24,7 +24,7 @@
 #define F_CPU X   // define your CPU Frequency
 
 /* UART baud rate */
-#define UART_BAUD  X   // define your UART baud rate
+#define UART_BAUD  9600   // define your UART baud rate
 
 /* HD44780 LCD port connections */
 #define HD44780_RS X, Y   // X = PORT Name | Y = PORT number
