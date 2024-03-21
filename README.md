@@ -16,12 +16,13 @@ Steps:
     B. include "defines.h"
    
     C. include "lcd.h"
-6. Define
+6. FILE lcd_str = FDEV_SETUP_STREAM(lcd_putchar, NULL, _FDEV_SETUP_WRITE);\
+8. Main
    
-    A. FILE lcd_str = FDEV_SETUP_STREAM(lcd_putchar, NULL, _FDEV_SETUP_WRITE);\
-8. stdout = &lcd_str
-9. lcd_init();
-10. Use printf("") to put messages on the screen
+   A. stdout = &lcd_str
+   
+   B. lcd_init();
+9. Use printf("") to put messages on the screen
 
 
 
