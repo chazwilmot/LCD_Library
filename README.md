@@ -16,7 +16,7 @@ Steps:
     B. include "defines.h"
    
     C. include "lcd.h"
-6. FILE lcd_str = FDEV_SETUP_STREAM(lcd_putchar, NULL, _FDEV_SETUP_WRITE);\
+6. FILE lcd_str = FDEV_SETUP_STREAM(lcd_putchar, NULL, _FDEV_SETUP_WRITE);
 8. Main
    
    A. stdout = &lcd_str
