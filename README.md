@@ -19,7 +19,7 @@ Steps:
 6. FILE lcd_str = FDEV_SETUP_STREAM(lcd_putchar, NULL, _FDEV_SETUP_WRITE);
 8. Main
    
-   A. stdout = &lcd_str
+   A. stdout = &lcd_str;
    
    B. lcd_init();
 9. Use printf("") to put messages on the screen
